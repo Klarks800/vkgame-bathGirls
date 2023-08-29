@@ -197,6 +197,27 @@
               });
     
             }
+
+            
+            function Restore() // вызываем метод ВК
+            {
+              vkBridge.subscribe((e) => {
+                if (e.detail.type === 'VKWebAppViewRestore') {
+                  myGameInstance.SendMessage('ConnectJS', 'RestoreCall');
+
+                }
+               });
+            }
+
+            function Hide() // вызываем метод ВК
+            {
+              vkBridge.subscribe((e) => {
+                if (e.detail.type === 'VKWebAppViewHide') {
+                  myGameInstance.SendMessage('ConnectJS', 'HideCall');
+
+                }
+               });
+            }
            
           
 
